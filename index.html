@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MenVsWild</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Добавляем Canvas для фона -->
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="container">
+        <header class="header-grid">
+            <div class="card time-card" data-tilt>
+                <div class="card-header"><i class="fa-solid fa-code"></i> time.js</div>
+                <div class="card-content">
+                    <span id="current-time">23:28:02</span>
+                    <span class="subtle">UTC+3</span>
+                </div>
+            </div>
+            <div class="card date-card" data-tilt>
+                <div class="card-header"><i class="fa-solid fa-code"></i> date.js</div>
+                <div class="card-content">
+                    <span id="current-date">26 апреля</span>
+                    <span class="subtle">2025 г.</span>
+                </div>
+            </div>
+            <div class="card weather-card" data-tilt>
+                 <div class="card-header"><i class="fa-solid fa-cloud-sun"></i> weather.json</div>
+                 <div class="card-content">
+                    <span>Ясно</span>
+                    <span class="subtle">25 °C</span>
+                 </div>
+            </div>
+        </header>
+
+        <main class="main-grid">
+            <section class="card about-card" data-tilt>
+                <div class="card-header"><i class="fa-regular fa-file-lines"></i> about.md</div>
+                <div class="card-content">
+                    <div class="about-header">
+                        <img src="1.jpg" alt="Avatar" class="avatar">
+                        <h2 class="username-glow">Привет! Я @MenVsWild</h2>
+                    </div>
+                    <div class="tags">
+                        <span class="tag javascript"><i class="fa-brands fa-js"></i> JavaScript</span>
+                        <span class="tag java"><i class="fa-brands fa-java"></i> Java</span>
+                        <span class="tag html"><i class="fa-brands fa-html5"></i> Html</span>
+                        <span class="tag python"><i class="fa-brands fa-python"></i> Python</span>
+                    </div>
+                    <p>Привет! Мне 17 лет я выучил несколько языков программирования а именно Python, Java, JavaScript, Html, CSS занимаюсь моддингом для игры майнкрафт, пишу телеграм ботов, делаю всеразличные сайты и многое другое, для заказа чего то либо тыкайте на кнопку ниже</p>
+                    <div class="actions">
+                        <a href="https://t.me/MenVsWild" target="_blank" rel="noopener noreferrer" class="btn">
+                            <i class="fa-solid fa-paper-plane"></i> Связаться со мной
+                        </a>
+                        <button class="btn"><i class="fa-solid fa-language"></i> RU</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card projects-card" data-tilt>
+                <div class="card-header"><i class="fa-regular fa-folder-open"></i> projects.json</div>
+                <div class="card-content">
+                    <h3><i class="fa-solid fa-bars-staggered"></i> Просмотреть все проекты</h3>
+                    <p><a href="https://menvswild1.github.io/sytee/" target="_blank" rel="noopener noreferrer">https://menvswild1.github.io/sytee/</a></p>
+                    <p>Пока всё :D</p>
+                </div>
+            </section>
+
+             <section class="card skills-card" data-tilt>
+                <div class="card-header"><i class="fa-solid fa-list-check"></i> skills.md</div>
+                <div class="card-content">
+                    <h3>Языки программирования</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="tag javascript"><i class="fa-brands fa-js"></i> JavaScript</span>
+                            <span class="status active"><i class="fa-solid fa-circle"></i> Active</span>
+                        </div>
+                        <div class="skill-item">
+                             <span class="tag java"><i class="fa-brands fa-java"></i> Java</span>
+                            <span class="status active"><i class="fa-solid fa-circle"></i> Active</span>
+                        </div>
+                        <div class="skill-item">
+                             <span class="tag html"><i class="fa-brands fa-html5"></i> Html</span>
+                             <span class="status active"><i class="fa-solid fa-circle"></i> Active</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="tag php"><i class="fa-brands fa-php"></i> PHP</span>
+                            <span class="status in-progress"><i class="fa-solid fa-circle"></i> In progress</span>
+                       </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card spotify-card" data-tilt>
+                <div class="card-header"><i class="fa-brands fa-spotify"></i> spotify.json</div>
+                <div class="card-content">
+                    <div class="spotify-info">
+                        <div class="spotify-icon"><i class="fa-solid fa-compact-disc fa-spin"></i></div>
+                        <div class="spotify-text">
+                            <h4>Сейчас ничего не играет</h4>
+                            <p class="subtle">Тут мог быть классный исполнитель</p>
+                        </div>
+                    </div>
+                    <div class="spotify-progress">
+                        <span class="subtle">0:00</span>
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                        <span class="subtle">0:00</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            Copyright © 2025 MenVsWild. Все права защищены.
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
