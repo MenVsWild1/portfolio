@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Добавляем Canvas для фона -->
     <canvas id="particle-canvas"></canvas>
 
     <div class="container">
@@ -94,22 +93,21 @@
                 </div>
             </section>
 
-            <section class="card spotify-card" data-tilt>
-                <div class="card-header"><i class="fa-brands fa-spotify"></i> spotify.json</div>
+            <section class="card subaru-card" data-tilt>
+                <div class="card-header"><i class="fa-solid fa-car"></i> subaru.json</div>
                 <div class="card-content">
-                    <div class="spotify-info">
-                        <div class="spotify-icon"><i class="fa-solid fa-compact-disc fa-spin"></i></div>
-                        <div class="spotify-text">
-                            <h4>Сейчас ничего не играет</h4>
-                            <p class="subtle">Тут мог быть классный исполнитель</p>
+                    <div class="subaru-info">
+                        <div class="subaru-text">
+                            <h4>Коплю на SUBARU FORESTER</h4>
+                            <p class="subtle">Мечты сбываются!</p>
                         </div>
                     </div>
-                    <div class="spotify-progress">
-                        <span class="subtle">0:00</span>
+                    <div class="subaru-progress">
+                        <span class="subtle" id="current-amount">10000</span>
                         <div class="progress-bar">
-                            <div class="progress"></div>
+                            <div class="progress" id="subaru-progress"></div>
                         </div>
-                        <span class="subtle">0:00</span>
+                        <span class="subtle">1000000</span>
                     </div>
                 </div>
             </section>

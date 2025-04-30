@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.directionY = directionY;
                 this.size = size;
                 this.color = color;
-                this.originalX = x; // Store original position for return effect
+                this.originalX = x;
                 this.originalY = y;
             }
 
@@ -98,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 let distance = Math.sqrt(dx * dx + dy * dy);
 
                 if (distance < mouse.radius + this.size) {
-                    // Push away from mouse
                     if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
                         this.x += 3;
                     }
@@ -112,19 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         this.y -= 3;
                     }
                 } else {
-                    // Smooth return to original position or general movement
-                     // if (this.x !== this.originalX || this.y !== this.originalY) {
-                     //   let returnDx = this.originalX - this.x;
-                     //   let returnDy = this.originalY - this.y;
-                     //   this.x += returnDx / 30; // Adjust speed of return
-                     //   this.y += returnDy / 30;
-                     //} else {
-                       this.x += this.directionX / 2; // Slower general movement
+                       this.x += this.directionX / 2;
                        this.y += this.directionY / 2;
-                     //}
                 }
 
-                 // Keep particles within bounds after push/pull
                  if (this.x < this.size) this.x = this.size;
                  if (this.x > canvas.width - this.size) this.x = canvas.width - this.size;
                  if (this.y < this.size) this.y = this.size;
@@ -138,10 +128,10 @@ document.addEventListener('DOMContentLoaded', () => {
             particlesArray = [];
             let numberOfParticles = (canvas.height * canvas.width) / 9000;
             for (let i = 0; i < numberOfParticles; i++) {
-                let size = (Math.random() * 2) + 1; // Smaller particles
+                let size = (Math.random() * 2) + 1;
                 let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2);
                 let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
-                let directionX = (Math.random() * 1 - 0.5); // Slower speed
+                let directionX = (Math.random() * 1 - 0.5);
                 let directionY = (Math.random() * 1 - 0.5);
                 let color = particleColor;
                 particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
@@ -151,13 +141,12 @@ document.addEventListener('DOMContentLoaded', () => {
         function connectParticles() {
             let opacityValue = 1;
             for (let a = 0; a < particlesArray.length; a++) {
-                for (let b = a + 1; b < particlesArray.length; b++) { // Start b from a + 1
+                for (let b = a + 1; b < particlesArray.length; b++) {
                     let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
                                  + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
                     if (distance < (canvas.width / 7) * (canvas.height / 7)) {
-                        opacityValue = 1 - (distance / 20000); // Fade line with distance
+                        opacityValue = 1 - (distance / 20000);
 
-                        // Check if lineColor already has alpha, parse it
                         let parsedLineColor = lineColor;
                         let baseColor = lineColor;
                         let currentAlpha = 1;
@@ -169,11 +158,11 @@ document.addEventListener('DOMContentLoaded', () => {
                                currentAlpha = match[4] ? parseFloat(match[4]) : 1;
                            }
                         }
-                        let finalAlpha = Math.min(currentAlpha, opacityValue > 0 ? opacityValue : 0); // Ensure alpha is not negative
+                        let finalAlpha = Math.min(currentAlpha, opacityValue > 0 ? opacityValue : 0);
                         parsedLineColor = baseColor.replace('rgb', 'rgba').replace(')', `, ${finalAlpha})`);
 
                         ctx.strokeStyle = parsedLineColor;
-                        ctx.lineWidth = 0.5; // Thinner lines
+                        ctx.lineWidth = 0.5;
                         ctx.beginPath();
                         ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
                         ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
@@ -193,9 +182,28 @@ document.addEventListener('DOMContentLoaded', () => {
             connectParticles();
         }
 
-        resizeCanvas(); // Initial setup
-        animateParticles(); // Start animation
+        resizeCanvas();
+        animateParticles();
     }
-});
 
-Copy
+     const subaruProgress = document.getElementById('subaru-progress');
+     const currentAmount = document.getElementById('current-amount');
+
+     //  Здесь задайте сумму накоплений
+     const initialAmount = 10000;
+
+     function updateSubaruProgress(amount) {
+          let value = amount;
+          if (isNaN(value) || value < 0) {
+              value = 0;
+          } else if (value > 1000000) {
+              value = 1000000;
+          }
+
+          const percentage = (value / 1000000) * 100;
+          subaruProgress.style.width = `${percentage}%`;
+          currentAmount.textContent = value.toLocaleString('ru-RU');
+     }
+
+     updateSubaruProgress(initialAmount);
+});
