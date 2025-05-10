@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
      const currentAmount = document.getElementById('current-amount');
 
      //  Здесь задайте сумму накоплений
-     const initialAmount = 10000;
+     const initialAmount = 197440;
 
      function updateSubaruProgress(amount) {
           let value = amount;
