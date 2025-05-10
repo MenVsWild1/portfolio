@@ -190,17 +190,17 @@ document.addEventListener('DOMContentLoaded', () => {
      const currentAmount = document.getElementById('current-amount');
 
      //  Здесь задайте сумму накоплений
-     const initialAmount = 197440;
+     const initialAmount = 19744;
 
      function updateSubaruProgress(amount) {
           let value = amount;
           if (isNaN(value) || value < 0) {
               value = 0;
-          } else if (value > 1000000) {
-              value = 1000000;
+          } else if (value > 100000) {
+              value = 100000;
           }
 
-          const percentage = (value / 1000000) * 100;
+          const percentage = (value / 100000) * 100;
           subaruProgress.style.width = `${percentage}%`;
           currentAmount.textContent = value.toLocaleString('ru-RU');
      }
