@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+<title id="title">Network Lab — topology overview</title><desc id="desc">Иллюстрация сетевой лаборатории с узлами, маршрутизацией, клиентами и наблюдаемостью.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111923"/><stop offset="1" stop-color="#18232e"/></linearGradient>
+  <linearGradient id="pane" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#202d39"/><stop offset="1" stop-color="#17212b"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8eb9df"/><stop offset="1" stop-color="#8eb9df" stop-opacity=".28"/></linearGradient>
+  <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#a9c1d8" stroke-opacity=".09" stroke-width="1"/></pattern>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="24"/></filter>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="15" stdDeviation="18" flood-color="#000" flood-opacity=".28"/></filter>
+</defs>
+<rect width="1200" height="680" fill="url(#bg)"/>
+<rect width="1200" height="680" fill="url(#grid)" opacity=".72"/>
+<circle cx="1030" cy="110" r="200" fill="#8eb9df" opacity=".10" filter="url(#glow)"/>
+<circle cx="120" cy="620" r="200" fill="#8eb9df" opacity=".055" filter="url(#glow)"/>
+
+<g filter="url(#shadow)">
+ <rect x="62" y="58" width="1076" height="564" rx="22" fill="#0c141c" stroke="#8eb9df" stroke-opacity=".28"/>
+ <rect x="62" y="58" width="1076" height="48" rx="22" fill="#1b2937"/><path d="M62 84v22h1076V84" fill="#1b2937"/>
+ <circle cx="91" cy="82" r="5" fill="#e58c8c"/><circle cx="111" cy="82" r="5" fill="#d6b77a"/><circle cx="131" cy="82" r="5" fill="#83b89a"/>
+ <text x="165" y="87" fill="#b6cce0" font-size="15" font-family="monospace">network lab / topology</text>
+ <rect x="84" y="128" width="1024" height="466" rx="12" fill="#142130"/>
+ <text x="120" y="176" fill="#8eb9df" font-size="13" font-family="monospace" letter-spacing="2">INFRASTRUCTURE VIEW</text>
+ <text x="120" y="214" fill="#edf4fa" font-size="28" font-family="Arial" font-weight="700">Сеть и точки подключения</text>
+ <path d="M598 330 344 430M598 330 842 430M598 330 598 494M344 430 208 520M344 430 470 520M842 430 730 520M842 430 986 520" stroke="#8eb9df" stroke-opacity=".42" stroke-width="2.5"/>
+ <rect x="465" y="253" width="266" height="112" rx="13" fill="#263b4f" stroke="#8eb9df" stroke-opacity=".45"/>
+ <circle cx="505" cy="292" r="13" fill="#8eb9df" opacity=".24"/><path d="M497 292h16m-8-8v16" stroke="#d5e7f6" stroke-width="2"/>
+ <text x="535" y="291" fill="#e4eef7" font-size="18" font-family="Arial" font-weight="700">Gateway</text><text x="535" y="317" fill="#9db7cd" font-size="12" font-family="monospace">ROUTING NODE</text>
+ <g>
+  <rect x="246" y="393" width="196" height="78" rx="10" fill="#1d3143" stroke="#8eb9df" stroke-opacity=".35"/>
+  <text x="276" y="425" fill="#e0ebf4" font-size="16" font-family="Arial">Client A</text><text x="276" y="449" fill="#9db7cd" font-size="12" font-family="monospace">CONNECTED</text>
+  <rect x="744" y="393" width="196" height="78" rx="10" fill="#1d3143" stroke="#8eb9df" stroke-opacity=".35"/>
+  <text x="774" y="425" fill="#e0ebf4" font-size="16" font-family="Arial">Client B</text><text x="774" y="449" fill="#9db7cd" font-size="12" font-family="monospace">CONNECTED</text>
+ </g>
+ <g>
+  <rect x="130" y="500" width="156" height="60" rx="9" fill="#1a2a39"/><text x="158" y="536" fill="#d9e8f4" font-size="14" font-family="Arial">DNS</text>
+  <rect x="390" y="500" width="156" height="60" rx="9" fill="#1a2a39"/><text x="417" y="536" fill="#d9e8f4" font-size="14" font-family="Arial">Proxy</text>
+  <rect x="650" y="500" width="156" height="60" rx="9" fill="#1a2a39"/><text x="677" y="536" fill="#d9e8f4" font-size="14" font-family="Arial">Metrics</text>
+  <rect x="908" y="500" width="156" height="60" rx="9" fill="#1a2a39"/><text x="936" y="536" fill="#d9e8f4" font-size="14" font-family="Arial">Logs</text>
+ </g>
+</g>
+</svg>

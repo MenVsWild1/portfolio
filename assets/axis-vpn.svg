@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+<title id="title">AXIS VPN — product overview</title><desc id="desc">Иллюстрация продукта: экран подписки, оплата и серверная инфраструктура.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111923"/><stop offset="1" stop-color="#18232e"/></linearGradient>
+  <linearGradient id="pane" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#202d39"/><stop offset="1" stop-color="#17212b"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8ebde8"/><stop offset="1" stop-color="#8ebde8" stop-opacity=".28"/></linearGradient>
+  <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#a9c1d8" stroke-opacity=".09" stroke-width="1"/></pattern>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="24"/></filter>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="15" stdDeviation="18" flood-color="#000" flood-opacity=".28"/></filter>
+</defs>
+<rect width="1200" height="680" fill="url(#bg)"/>
+<rect width="1200" height="680" fill="url(#grid)" opacity=".72"/>
+<circle cx="1030" cy="110" r="200" fill="#8ebde8" opacity=".10" filter="url(#glow)"/>
+<circle cx="120" cy="620" r="200" fill="#8ebde8" opacity=".055" filter="url(#glow)"/>
+
+<g filter="url(#shadow)">
+ <rect x="62" y="58" width="1076" height="564" rx="22" fill="#0b1118" stroke="#8ebde8" stroke-opacity=".28"/>
+ <rect x="62" y="58" width="1076" height="48" rx="22" fill="#1b2732"/>
+ <path d="M62 84v22h1076V84" fill="#1b2732"/>
+ <circle cx="91" cy="82" r="5" fill="#e58c8c"/><circle cx="111" cy="82" r="5" fill="#d6b77a"/><circle cx="131" cy="82" r="5" fill="#83b89a"/>
+ <text x="165" y="87" fill="#aabac8" font-size="15" font-family="monospace">axis / control panel</text>
+ <rect x="86" y="128" width="252" height="466" rx="12" fill="#131d27"/>
+ <text x="112" y="177" fill="#f0f5fa" font-size="29" font-weight="700" font-family="Arial">AXIS VPN</text>
+ <text x="112" y="205" fill="#8c9eaf" font-size="13" font-family="monospace">SUBSCRIPTION</text>
+ <rect x="109" y="229" width="206" height="100" rx="10" fill="#233444" stroke="#8ebde8" stroke-opacity=".42"/>
+ <circle cx="138" cy="261" r="12" fill="#8ebde8" opacity=".85"/>
+ <text x="161" y="263" fill="#edf4fa" font-size="17" font-family="Arial" font-weight="700">Premium</text>
+ <text x="128" y="297" fill="#a9c0d4" font-size="13" font-family="Arial">ACTIVE · 30 DAYS</text>
+ <rect x="109" y="348" width="206" height="52" rx="8" fill="#1c2a36"/>
+ <circle cx="134" cy="374" r="7" fill="#7cbd9e"/>
+ <text x="155" y="379" fill="#d4e0e9" font-size="14" font-family="Arial">Subscription renewed</text>
+ <rect x="109" y="414" width="206" height="52" rx="8" fill="#1c2a36"/>
+ <circle cx="134" cy="440" r="7" fill="#8ebde8"/>
+ <text x="155" y="445" fill="#d4e0e9" font-size="14" font-family="Arial">Payment received</text>
+ <rect x="109" y="480" width="206" height="83" rx="8" fill="#1c2a36"/>
+ <text x="128" y="510" fill="#8c9eaf" font-size="12" font-family="monospace">PAYMENT HISTORY</text>
+ <text x="128" y="541" fill="#edf4fa" font-size="24" font-family="Arial" font-weight="700">850+</text>
+ <text x="196" y="541" fill="#9aabb9" font-size="12" font-family="Arial">payments</text>
+ <rect x="363" y="128" width="746" height="466" rx="12" fill="url(#pane)" stroke="#ffffff" stroke-opacity=".08"/>
+ <text x="405" y="180" fill="#93a7b8" font-size="13" font-family="monospace" letter-spacing="2">SERVICE FLOW</text>
+ <text x="405" y="218" fill="#f0f5fa" font-size="28" font-family="Arial" font-weight="700">From payment to access</text>
+ <path d="M500 352H970" stroke="#8ebde8" stroke-opacity=".45" stroke-width="2" stroke-dasharray="7 9"/>
+ <g>
+  <rect x="405" y="284" width="178" height="136" rx="12" fill="#253747" stroke="#8ebde8" stroke-opacity=".48"/>
+  <circle cx="445" cy="326" r="15" fill="#8ebde8" opacity=".22"/><path d="M438 326h14m-7-7v14" stroke="#bcd7ef" stroke-width="2"/>
+  <text x="432" y="373" fill="#e7f0f7" font-size="18" font-family="Arial" font-weight="700">Plan</text>
+  <text x="432" y="397" fill="#95a9ba" font-size="12" font-family="monospace">TARIFF</text>
+  <rect x="642" y="284" width="178" height="136" rx="12" fill="#253747" stroke="#8ebde8" stroke-opacity=".48"/>
+  <circle cx="682" cy="326" r="15" fill="#8ebde8" opacity=".22"/><path d="M674 327l6 6 11-14" fill="none" stroke="#bcd7ef" stroke-width="2"/>
+  <text x="669" y="373" fill="#e7f0f7" font-size="18" font-family="Arial" font-weight="700">Payment</text>
+  <text x="669" y="397" fill="#95a9ba" font-size="12" font-family="monospace">BILLING</text>
+  <rect x="879" y="284" width="178" height="136" rx="12" fill="#253747" stroke="#8ebde8" stroke-opacity=".48"/>
+  <circle cx="919" cy="326" r="15" fill="#8ebde8" opacity=".22"/><path d="M913 326h12m-6-6v12" stroke="#bcd7ef" stroke-width="2"/>
+  <text x="906" y="373" fill="#e7f0f7" font-size="18" font-family="Arial" font-weight="700">Access</text>
+  <text x="906" y="397" fill="#95a9ba" font-size="12" font-family="monospace">PROVISIONING</text>
+ </g>
+ <text x="405" y="495" fill="#8fa3b4" font-size="13" font-family="monospace">PYTHON  /  TELEGRAM  /  BILLING  /  XRAY</text>
+ <rect x="405" y="520" width="650" height="1" fill="#ffffff" opacity=".10"/>
+ <text x="405" y="555" fill="#b5c5d2" font-size="15" font-family="Arial">Automated subscriptions · infrastructure · operations</text>
+</g>
+</svg>

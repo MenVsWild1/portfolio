@@ -16,10 +16,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css?v=20261110-5">
+    <link rel="stylesheet" href="/style.css?v=20261110-6">
     <title>Тимофей Бойчук — MenVsWild</title>
 </head>
 <body>
+    <div class="ambient-layer" aria-hidden="true">
+        <span class="ambient ambient-one"></span>
+        <span class="ambient ambient-two"></span>
+        <span class="ambient ambient-three"></span>
+    </div>
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
     <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
         <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.2 1.3-4.2-2.3-5.9-2.8M15 21v-3.4c0-1 .1-1.7-.5-2.3 3.3-.4 6.8-1.6 6.8-7.2a5.6 5.6 0 0 0-1.5-3.9 5.2 5.2 0 0 0-.1-3.8s-1.2-.4-4 1.5a13.6 13.6 0 0 0-7.3 0C5.6 0 4.4.4 4.4.4a5.2 5.2 0 0 0-.1 3.8 5.6 5.6 0 0 0-1.5 3.9c0 5.6 3.5 6.8 6.8 7.2-.6.6-.6 1.3-.6 2.3V21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -50,7 +56,8 @@
 
         <main>
             <section class="intro">
-                <div class="intro-copy">
+                
+                <div class="intro-copy" data-reveal>
                     <div class="eyebrow"><span class="mono">01</span> ОБО МНЕ</div>
                     <h1>Тимофей Бойчук</h1>
                     <p class="role">Python-разработчик · Backend и инфраструктура</p>
@@ -64,7 +71,7 @@
                         <a class="button button-secondary" href="https://github.com/MenVsWild1" target="_blank" rel="noopener noreferrer"><svg><use href="#i-github"/></svg> GitHub</a>
                     </div>
                 </div>
-                <aside class="profile">
+                <aside class="profile" data-reveal>
                     <img src="/1.jpg" alt="Аватар MenVsWild" class="avatar" width="88" height="88">
                     <div class="profile-name">Тимофей Бойчук</div>
                     <div class="profile-handle">@MenVsWild</div>
@@ -78,12 +85,16 @@
             </section>
 
             <section class="section" id="projects">
-                <div class="section-heading">
+                <div class="section-heading" data-reveal>
                     <div><div class="eyebrow"><span class="mono">02</span> ИЗБРАННОЕ</div><h2>Основные проекты</h2></div>
                     <span class="section-note">Самое интересное — здесь</span>
                 </div>
 
-                <article class="featured-project">
+                <article class="featured-project" data-reveal>
+                    <div class="featured-visual">
+                        <img src="/assets/axis-vpn.svg" alt="Визуальная иллюстрация проекта AXIS VPN" width="1200" height="680" fetchpriority="high">
+                        <span class="visual-caption">PRODUCT OVERVIEW</span>
+                    </div>
                     <div class="featured-main">
                         <div class="project-label"><svg><use href="#i-shield"/></svg> КОММЕРЧЕСКИЙ ПРОЕКТ</div>
                         <h3>AXIS VPN</h3>
@@ -104,14 +115,16 @@
                 </article>
 
                 <div class="secondary-projects">
-                    <article class="secondary-project">
+                    <article class="secondary-project" data-reveal>
+                        <img class="secondary-visual" src="/assets/vpoiske.svg" alt="Визуальная иллюстрация платформы ВПОИСКЕ" width="1200" height="680" loading="lazy" decoding="async">
                         <div class="secondary-head"><span class="project-symbol"><svg><use href="#i-map"/></svg></span><span class="project-label">В ПРОДАКШЕНЕ · ПОИСКОВО-СПАСАТЕЛЬНАЯ ПЛАТФОРМА</span></div>
                         <h3>ВПОИСКЕ</h3>
                         <p>Работающая в продакшене платформа для координации поисковых операций. Геоданные, поисковые зоны, GPS-треки и обновления состояния групп в реальном времени.</p>
                         <div class="secondary-tags">FastAPI · PostgreSQL / PostGIS · Redis · WebSocket</div>
                         <button class="detail-button" type="button" data-project="vpoiske">Подробнее <span>→</span></button>
                     </article>
-                    <article class="secondary-project">
+                    <article class="secondary-project" data-reveal>
+                        <img class="secondary-visual" src="/assets/wraithcontrol.svg" alt="Визуальная иллюстрация WraithControl" width="1200" height="680" loading="lazy" decoding="async">
                         <div class="secondary-head"><span class="project-symbol"><svg><use href="#i-ghost"/></svg></span><span class="project-label">TELEGRAM BUSINESS</span></div>
                         <h3>WraithControl</h3>
                         <p>Инструмент управления Telegram Business: обработка событий, автоматизация диалогов, интерактивные меню и фоновые процессы.</p>
@@ -127,17 +140,17 @@
                     <span class="section-note">Небольшие инструменты и эксперименты</span>
                 </div>
                 <div class="project-list">
-                    <button class="project-row" type="button" data-project="northstar"><span class="row-icon"><svg><use href="#i-agent"/></svg></span><span class="row-name"><strong>Northstar Agent 2.0</strong><small>Локальный AI-агент для работы с системой и браузером</small></span><span class="row-stack">Python · FastAPI · Playwright</span><span class="row-arrow">↗</span></button>
-                    <button class="project-row" type="button" data-project="job-agent"><span class="row-icon"><svg><use href="#i-briefcase"/></svg></span><span class="row-name"><strong>Job-Agent</strong><small>Поиск вакансий и подготовка персональных откликов</small></span><span class="row-stack">Python · Playwright · SQLite</span><span class="row-arrow">↗</span></button>
-                    <button class="project-row" type="button" data-project="cinema"><span class="row-icon"><svg><use href="#i-film"/></svg></span><span class="row-name"><strong>CinemaBot</strong><small>Telegram-бот с каталогом фильмов и голосованиями</small></span><span class="row-stack">Python · Telegram API</span><span class="row-arrow">↗</span></button>
-                    <button class="project-row" type="button" data-project="lead-bot"><span class="row-icon"><svg><use href="#i-bot"/></svg></span><span class="row-name"><strong>Telegram Lead Bot</strong><small>Сбор заявок и передача обращений менеджеру</small></span><span class="row-stack">Python · aiogram 3</span><span class="row-arrow">↗</span></button>
-                    <button class="project-row" type="button" data-project="web-parser"><span class="row-icon"><svg><use href="#i-sheet"/></svg></span><span class="row-name"><strong>Web Parser → Excel</strong><small>Сбор данных из каталога и экспорт в XLSX</small></span><span class="row-stack">Python · BeautifulSoup · openpyxl</span><span class="row-arrow">↗</span></button>
-                    <button class="project-row" type="button" data-project="dpi-lab"><span class="row-icon"><svg><use href="#i-network"/></svg></span><span class="row-name"><strong>Network / DPI Lab</strong><small>Лабораторный стенд и тестирование сетевых конфигураций</small></span><span class="row-stack">Linux · Xray · Bash</span><span class="row-arrow">↗</span></button>
+                    <button class="project-row" type="button" data-project="northstar" data-reveal><img class="row-thumb" src="/assets/northstar-agent.svg" alt="Иллюстрация Northstar Agent" width="1200" height="680" loading="lazy" decoding="async"><span class="row-name"><strong>Northstar Agent 2.0</strong><small>Локальный AI-агент для работы с системой и браузером</small></span><span class="row-stack">Python · FastAPI · Playwright</span><span class="row-arrow">↗</span></button>
+                    <button class="project-row" type="button" data-project="job-agent" data-reveal><img class="row-thumb" src="/assets/job-agent.svg" alt="Иллюстрация Job-Agent" width="1200" height="680" loading="lazy" decoding="async"><span class="row-name"><strong>Job-Agent</strong><small>Поиск вакансий и подготовка персональных откликов</small></span><span class="row-stack">Python · Playwright · SQLite</span><span class="row-arrow">↗</span></button>
+                    <button class="project-row" type="button" data-project="cinema" data-reveal><img class="row-thumb" src="/assets/cinemabot.svg" alt="Иллюстрация CinemaBot" width="1200" height="680" loading="lazy" decoding="async"><span class="row-name"><strong>CinemaBot</strong><small>Telegram-бот с каталогом фильмов и голосованиями</small></span><span class="row-stack">Python · Telegram API</span><span class="row-arrow">↗</span></button>
+                    <button class="project-row" type="button" data-project="lead-bot" data-reveal><img class="row-thumb" src="/assets/lead-bot.svg" alt="Иллюстрация Telegram Lead Bot" width="1200" height="680" loading="lazy" decoding="async"><span class="row-name"><strong>Telegram Lead Bot</strong><small>Сбор заявок и передача обращений менеджеру</small></span><span class="row-stack">Python · aiogram 3</span><span class="row-arrow">↗</span></button>
+                    <button class="project-row" type="button" data-project="web-parser" data-reveal><img class="row-thumb" src="/assets/web-parser.svg" alt="Иллюстрация Web Parser" width="1200" height="680" loading="lazy" decoding="async"><span class="row-name"><strong>Web Parser → Excel</strong><small>Сбор данных из каталога и экспорт в XLSX</small></span><span class="row-stack">Python · BeautifulSoup · openpyxl</span><span class="row-arrow">↗</span></button>
+                    <button class="project-row" type="button" data-project="dpi-lab" data-reveal><img class="row-thumb" src="/assets/network-lab.svg" alt="Иллюстрация Network / DPI Lab" width="1200" height="680" loading="lazy" decoding="async"><span class="row-name"><strong>Network / DPI Lab</strong><small>Лабораторный стенд и тестирование сетевых конфигураций</small></span><span class="row-stack">Linux · Xray · Bash</span><span class="row-arrow">↗</span></button>
                 </div>
             </section>
 
             <section class="lower-section" id="stack">
-                <div class="stack-panel">
+                <div class="stack-panel" data-reveal>
                     <div class="eyebrow"><span class="mono">04</span> ИНСТРУМЕНТЫ</div>
                     <h2>Технологии</h2>
                     <div class="stack-groups">
@@ -147,7 +160,7 @@
                         <div><h3>Сети и инструменты</h3><p>TCP/IP, DNS, Xray, Playwright, Git, Sentry, Prometheus</p></div>
                     </div>
                 </div>
-                <div class="contact-panel" id="contact">
+                <div class="contact-panel" id="contact" data-reveal>
                     <div class="eyebrow"><span class="mono">05</span> КОНТАКТЫ</div>
                     <h2>Связаться</h2>
                     <p>По вопросам работы, сотрудничества или техническим задачам.</p>
@@ -172,6 +185,6 @@
             <div id="modal-content"></div>
         </section>
     </div>
-    <script src="/script.js?v=20261110-5" defer></script>
+    <script src="/script.js?v=20261110-6" defer></script>
 </body>
 </html>

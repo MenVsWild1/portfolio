@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+<title id="title">ВПОИСКЕ — geospatial coordination</title><desc id="desc">Иллюстрация геоинформационной панели с зонами поиска, GPS-маршрутами и статусами групп.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111923"/><stop offset="1" stop-color="#18232e"/></linearGradient>
+  <linearGradient id="pane" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#202d39"/><stop offset="1" stop-color="#17212b"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8fc4a4"/><stop offset="1" stop-color="#8fc4a4" stop-opacity=".28"/></linearGradient>
+  <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#a9c1d8" stroke-opacity=".09" stroke-width="1"/></pattern>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="24"/></filter>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="15" stdDeviation="18" flood-color="#000" flood-opacity=".28"/></filter>
+</defs>
+<rect width="1200" height="680" fill="url(#bg)"/>
+<rect width="1200" height="680" fill="url(#grid)" opacity=".72"/>
+<circle cx="1030" cy="110" r="200" fill="#8fc4a4" opacity=".10" filter="url(#glow)"/>
+<circle cx="120" cy="620" r="200" fill="#8fc4a4" opacity=".055" filter="url(#glow)"/>
+
+<g filter="url(#shadow)">
+ <rect x="62" y="58" width="1076" height="564" rx="22" fill="#0c1418" stroke="#8fc4a4" stroke-opacity=".26"/>
+ <rect x="62" y="58" width="1076" height="48" rx="22" fill="#1a292a"/><path d="M62 84v22h1076V84" fill="#1a292a"/>
+ <circle cx="91" cy="82" r="5" fill="#e58c8c"/><circle cx="111" cy="82" r="5" fill="#d6b77a"/><circle cx="131" cy="82" r="5" fill="#83b89a"/>
+ <text x="165" y="87" fill="#b4c8be" font-size="15" font-family="monospace">ВПОИСКЕ / оперативная карта</text>
+ <rect x="84" y="128" width="710" height="466" rx="12" fill="#142323"/>
+ <path d="M84 210 210 153l117 40 93-46 117 49 95-32 162 75M84 430l122-79 103 47 125-44 104 63 91-26 165 51M84 550l112-49 102 23 140-67 128 54 121-45 107 35" fill="none" stroke="#89b59c" stroke-opacity=".22" stroke-width="2"/>
+ <path d="M125 128v466M250 128v466M375 128v466M500 128v466M625 128v466M750 128v466M84 220h710M84 330h710M84 440h710M84 550h710" stroke="#9ac3a7" stroke-opacity=".11"/>
+ <path d="M215 430c20-72 88-113 142-92s60 82 115 73 95-110 153-82" fill="none" stroke="#9ddbb5" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 9"/>
+ <path d="M180 300c20-62 94-98 155-68s67 91 136 67 88-92 153-60" fill="none" stroke="#76a88b" stroke-width="2" stroke-opacity=".6"/>
+ <path d="M430 190c60-36 126-25 165 22s47 105 112 111" fill="none" stroke="#76a88b" stroke-width="2" stroke-opacity=".45"/>
+ <circle cx="215" cy="430" r="16" fill="#8fc4a4" opacity=".18"/><circle cx="215" cy="430" r="7" fill="#b8e0c6"/>
+ <circle cx="472" cy="411" r="17" fill="#8fc4a4" opacity=".18"/><circle cx="472" cy="411" r="7" fill="#b8e0c6"/>
+ <circle cx="625" cy="329" r="16" fill="#8fc4a4" opacity=".18"/><circle cx="625" cy="329" r="7" fill="#b8e0c6"/>
+ <rect x="105" y="149" width="214" height="42" rx="7" fill="#1e3531" stroke="#8fc4a4" stroke-opacity=".28"/>
+ <text x="125" y="176" fill="#c7dfd0" font-size="14" font-family="monospace">SEARCH AREA 04</text>
+ <rect x="816" y="128" width="292" height="466" rx="12" fill="url(#pane)" stroke="#ffffff" stroke-opacity=".08"/>
+ <text x="850" y="177" fill="#93aaa0" font-size="13" font-family="monospace" letter-spacing="2">FIELD TEAMS</text>
+ <text x="850" y="214" fill="#eef5f0" font-size="26" font-family="Arial" font-weight="700">Группы на карте</text>
+ <rect x="844" y="244" width="236" height="78" rx="9" fill="#21352f"/>
+ <circle cx="874" cy="282" r="9" fill="#8fc4a4"/><text x="898" y="278" fill="#e2eee6" font-size="16" font-family="Arial">Группа Север</text>
+ <text x="898" y="300" fill="#97b4a2" font-size="12" font-family="monospace">GPS ACTIVE</text>
+ <rect x="844" y="336" width="236" height="78" rx="9" fill="#21302e"/>
+ <circle cx="874" cy="374" r="9" fill="#d7b77d"/><text x="898" y="370" fill="#e2eee6" font-size="16" font-family="Arial">Группа Восток</text>
+ <text x="898" y="392" fill="#a9b6a9" font-size="12" font-family="monospace">IN SEARCH ZONE</text>
+ <rect x="844" y="428" width="236" height="78" rx="9" fill="#21302e"/>
+ <circle cx="874" cy="466" r="9" fill="#8ebde8"/><text x="898" y="462" fill="#e2eee6" font-size="16" font-family="Arial">Координатор</text>
+ <text x="898" y="484" fill="#a9b6a9" font-size="12" font-family="monospace">CONNECTED</text>
+ <text x="850" y="552" fill="#8ca79a" font-size="12" font-family="monospace">POSTGIS · WEBSOCKET · REDIS</text>
+</g>
+</svg>

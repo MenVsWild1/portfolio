@@ -1,6 +1,7 @@
 const projects = {
     axis: {
         name: "AXIS VPN",
+        image: "/assets/axis-vpn.svg",
         category: "Коммерческий Telegram-сервис",
         role: "Разработка продукта, backend и инфраструктуры",
         description: "Сервис для продажи и управления VPN-подписками. Я разрабатывал Telegram-бота и backend: связывал оплату, учёт подписок, выдачу доступов и серверную часть. За время работы через сервис прошло более 850 успешных платежей. Позже проект был передан новому владельцу.",
@@ -18,6 +19,7 @@ const projects = {
     },
     vpoiske: {
         name: "ВПОИСКЕ",
+        image: "/assets/vpoiske.svg",
         category: "Поисково-спасательная платформа",
         role: "Backend-разработка и архитектура серверной части",
         description: "Платформа для координации поисково-спасательных операций. Система связывает координаторов и полевые группы, помогает работать с поисковыми зонами и геопозицией участников, а изменения передаёт в реальном времени.",
@@ -32,6 +34,7 @@ const projects = {
     },
     wraith: {
         name: "WraithControl",
+        image: "/assets/wraithcontrol.svg",
         category: "Telegram Business automation",
         role: "Backend-разработка и интеграции Telegram",
         description: "Собственный инструмент для управления Telegram Business и автоматизации диалогов. В проекте есть обработка событий сообщений, интерактивный интерфейс, настройки чатов и отдельные фоновые процессы.",
@@ -49,6 +52,7 @@ const projects = {
     },
     northstar: {
         name: "Northstar Agent 2.0",
+        image: "/assets/northstar-agent.svg",
         category: "Локальный AI-агент",
         role: "Архитектура и разработка",
         description: "Проект локального помощника для работы с приложениями, файлами и браузером. Основная идея — модульные инструменты, контролируемое выполнение действий и понятная история операций.",
@@ -63,6 +67,7 @@ const projects = {
     },
     "job-agent": {
         name: "Job-Agent",
+        image: "/assets/job-agent.svg",
         category: "Автоматизация поиска работы",
         role: "Разработка автоматизации и интеграций",
         description: "Инструмент для поиска вакансий и подготовки персональных откликов. Собирает результаты по заданным критериям, помогает оценить соответствие требованиям и готовит черновики писем.",
@@ -77,6 +82,7 @@ const projects = {
     },
     cinema: {
         name: "CinemaBot",
+        image: "/assets/cinemabot.svg",
         category: "Telegram · Media",
         role: "Разработка Telegram-бота и backend-логики",
         description: "Бот для работы с каталогом фильмов и пользовательскими сценариями. В проекте есть поиск, голосования и интеграции авторизации.",
@@ -91,6 +97,7 @@ const projects = {
     },
     "lead-bot": {
         name: "Telegram Lead Bot",
+        image: "/assets/lead-bot.svg",
         category: "Открытый GitHub-проект",
         role: "Автор проекта",
         description: "Небольшой бот для приёма заявок. Пользователь отвечает на несколько вопросов, после чего бот отправляет собранную информацию менеджеру.",
@@ -105,6 +112,7 @@ const projects = {
     },
     "web-parser": {
         name: "Web Parser → Excel",
+        image: "/assets/web-parser.svg",
         category: "Открытый GitHub-проект",
         role: "Автор проекта",
         description: "Демонстрационный парсер каталога: загружает страницы, извлекает данные и сохраняет их в оформленный Excel-файл.",
@@ -118,6 +126,7 @@ const projects = {
     },
     "dpi-lab": {
         name: "Network / DPI Lab",
+        image: "/assets/network-lab.svg",
         category: "Сетевой лабораторный проект",
         role: "Настройка, тестирование и документирование",
         description: "Лабораторный стенд для проверки сетевых конфигураций и клиентских подключений. Важная часть работы — воспроизводимое развёртывание и документирование результатов.",
@@ -147,7 +156,11 @@ function openProject(id, trigger) {
         '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + label + ' ↗</a>'
     ).join("");
 
+    const visual = project.image
+        ? '<div class="modal-visual"><img src="' + project.image + '" alt="Визуальная иллюстрация проекта ' + project.name + '" width="1200" height="680"></div>'
+        : "";
     modalContent.innerHTML =
+        visual +
         '<div class="modal-category">' + project.category + '</div>' +
         '<h2 class="modal-title" id="modal-title">' + project.name + '</h2>' +
         '<p class="modal-description">' + project.description + '</p>' +
@@ -192,8 +205,96 @@ function updateClock() {
     if (year) year.textContent = String(now.getFullYear());
 }
 
+function initScrollReveal() {
+    const targets = document.querySelectorAll("[data-reveal]");
+    if (!targets.length) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+        targets.forEach(target => target.classList.add("is-visible"));
+        return;
+    }
+
+    document.body.classList.add("js-motion");
+    const observer = new IntersectionObserver((entries, instance) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            instance.unobserve(entry.target);
+        });
+    }, { threshold: 0.12, rootMargin: "0px 0px -36px 0px" });
+
+    targets.forEach((target, index) => {
+        if (target.classList.contains("project-row")) {
+            target.style.setProperty("--reveal-delay", Math.min(index % 6, 5) * 45 + "ms");
+        }
+        observer.observe(target);
+    });
+}
+
+function initAmbientMotion() {
+    const layer = document.querySelector(".ambient-layer");
+    if (!layer || !window.matchMedia("(pointer: fine)").matches ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let scheduled = false;
+    let x = 0;
+    let y = 0;
+    window.addEventListener("pointermove", event => {
+        x = (event.clientX / Math.max(window.innerWidth, 1) - 0.5) * 2;
+        y = (event.clientY / Math.max(window.innerHeight, 1) - 0.5) * 2;
+        if (scheduled) return;
+        scheduled = true;
+        window.requestAnimationFrame(() => {
+            layer.style.setProperty("--pointer-x", (x * 10).toFixed(1) + "px");
+            layer.style.setProperty("--pointer-y", (y * 8).toFixed(1) + "px");
+            scheduled = false;
+        });
+    }, { passive: true });
+}
+
+function initReadingProgress() {
+    const bar = document.querySelector(".reading-progress span");
+    if (!bar) return;
+    let scheduled = false;
+    const update = () => {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
+        bar.style.transform = "scaleX(" + Math.min(1, Math.max(0, ratio)) + ")";
+        scheduled = false;
+    };
+    window.addEventListener("scroll", () => {
+        if (scheduled) return;
+        scheduled = true;
+        window.requestAnimationFrame(update);
+    }, { passive: true });
+    update();
+}
+
+function initSectionNavigation() {
+    const links = Array.from(document.querySelectorAll('.topbar nav a[href^="#"]'));
+    const sections = links.map(link => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+    if (!("IntersectionObserver" in window) || !sections.length) return;
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            links.forEach(link => {
+                if (link.getAttribute("href") === "#" + entry.target.id) {
+                    link.setAttribute("aria-current", "location");
+                } else {
+                    link.removeAttribute("aria-current");
+                }
+            });
+        });
+    }, { rootMargin: "-25% 0px -65% 0px" });
+    sections.forEach(section => observer.observe(section));
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     initProjects();
+    initScrollReveal();
+    initAmbientMotion();
+    initReadingProgress();
+    initSectionNavigation();
     updateClock();
     window.setInterval(updateClock, 30000);
 });

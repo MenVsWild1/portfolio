@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+<title id="title">Web Parser to Excel — data extraction</title><desc id="desc">Иллюстрация парсера каталога, извлечения данных и экспорта в таблицу.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111923"/><stop offset="1" stop-color="#18232e"/></linearGradient>
+  <linearGradient id="pane" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#202d39"/><stop offset="1" stop-color="#17212b"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8fc6cc"/><stop offset="1" stop-color="#8fc6cc" stop-opacity=".28"/></linearGradient>
+  <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#a9c1d8" stroke-opacity=".09" stroke-width="1"/></pattern>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="24"/></filter>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="15" stdDeviation="18" flood-color="#000" flood-opacity=".28"/></filter>
+</defs>
+<rect width="1200" height="680" fill="url(#bg)"/>
+<rect width="1200" height="680" fill="url(#grid)" opacity=".72"/>
+<circle cx="1030" cy="110" r="200" fill="#8fc6cc" opacity=".10" filter="url(#glow)"/>
+<circle cx="120" cy="620" r="200" fill="#8fc6cc" opacity=".055" filter="url(#glow)"/>
+
+<g filter="url(#shadow)">
+ <rect x="62" y="58" width="1076" height="564" rx="22" fill="#0e171b" stroke="#8fc6cc" stroke-opacity=".28"/>
+ <rect x="62" y="58" width="1076" height="48" rx="22" fill="#1b2a2e"/><path d="M62 84v22h1076V84" fill="#1b2a2e"/>
+ <circle cx="91" cy="82" r="5" fill="#e58c8c"/><circle cx="111" cy="82" r="5" fill="#d6b77a"/><circle cx="131" cy="82" r="5" fill="#83b89a"/>
+ <text x="165" y="87" fill="#b8d5d8" font-size="15" font-family="monospace">parser / extraction job</text>
+ <rect x="84" y="128" width="476" height="466" rx="12" fill="#162328"/>
+ <text x="118" y="176" fill="#8fc6cc" font-size="13" font-family="monospace" letter-spacing="2">SOURCE PAGE</text>
+ <text x="118" y="213" fill="#eef5f5" font-size="27" font-family="Arial" font-weight="700">Каталог товаров</text>
+ <rect x="118" y="242" width="408" height="56" rx="8" fill="#23343a"/><circle cx="147" cy="270" r="8" fill="none" stroke="#8fc6cc" stroke-width="2"/><path d="m153 276 7 7" stroke="#8fc6cc" stroke-width="2"/><text x="176" y="276" fill="#b4c5c8" font-size="14" font-family="Arial">example-store / catalog</text>
+ <rect x="118" y="317" width="408" height="61" rx="8" fill="#202f34"/><rect x="135" y="332" width="31" height="31" rx="5" fill="#42616a"/><text x="182" y="343" fill="#e3eeee" font-size="15" font-family="Arial">Product Alpha</text><text x="182" y="363" fill="#8fc6cc" font-size="13" font-family="monospace">€ 19.90</text>
+ <rect x="118" y="391" width="408" height="61" rx="8" fill="#202f34"/><rect x="135" y="406" width="31" height="31" rx="5" fill="#42616a"/><text x="182" y="417" fill="#e3eeee" font-size="15" font-family="Arial">Product Beta</text><text x="182" y="437" fill="#8fc6cc" font-size="13" font-family="monospace">€ 24.50</text>
+ <rect x="118" y="465" width="408" height="61" rx="8" fill="#202f34"/><rect x="135" y="480" width="31" height="31" rx="5" fill="#42616a"/><text x="182" y="491" fill="#e3eeee" font-size="15" font-family="Arial">Product Gamma</text><text x="182" y="511" fill="#8fc6cc" font-size="13" font-family="monospace">€ 12.00</text>
+ <rect x="591" y="128" width="517" height="466" rx="12" fill="url(#pane)" stroke="#ffffff" stroke-opacity=".08"/>
+ <text x="625" y="176" fill="#8fc6cc" font-size="13" font-family="monospace" letter-spacing="2">STRUCTURED OUTPUT</text>
+ <text x="625" y="214" fill="#eef5f5" font-size="27" font-family="Arial" font-weight="700">Export.xlsx</text>
+ <rect x="625" y="244" width="449" height="250" rx="8" fill="#1d2b30" stroke="#8fc6cc" stroke-opacity=".2"/>
+ <rect x="625" y="244" width="449" height="42" rx="8" fill="#294149"/>
+ <g fill="#c6dcde" font-family="monospace" font-size="12"><text x="646" y="270">NAME</text><text x="823" y="270">PRICE</text><text x="923" y="270">STATUS</text></g>
+ <path d="M625 286h449M625 338h449M625 390h449M625 442h449M795 244v250M902 244v250" stroke="#8fc6cc" stroke-opacity=".19"/>
+ <g fill="#dbe9ea" font-family="Arial" font-size="13"><text x="646" y="319">Alpha</text><text x="823" y="319">19.90</text><text x="923" y="319">in stock</text><text x="646" y="371">Beta</text><text x="823" y="371">24.50</text><text x="923" y="371">in stock</text><text x="646" y="423">Gamma</text><text x="823" y="423">12.00</text><text x="923" y="423">limited</text></g>
+ <rect x="625" y="520" width="152" height="42" rx="7" fill="#285159"/><text x="652" y="547" fill="#d8eff0" font-size="14" font-family="monospace">XLSX READY</text>
+ <text x="802" y="547" fill="#90a9ad" font-size="13" font-family="monospace">BEAUTIFULSOUP · OPENPYXL</text>
+</g>
+</svg>
