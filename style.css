@@ -478,3 +478,113 @@ footer {
         font-size: 1.1em;
     }
 }
+
+
+/* Glassmorphism layer — keeps the original layout and interactions */
+:root {
+    --card-bg-rgb: 17, 25, 40;
+    --card-bg-alpha: 0.48;
+    --border-color: rgba(255, 255, 255, 0.16);
+    --tag-bg: rgba(255, 255, 255, 0.07);
+}
+
+body {
+    background:
+        radial-gradient(ellipse at 12% 8%, rgba(40, 110, 190, 0.22), transparent 38%),
+        radial-gradient(ellipse at 88% 82%, rgba(35, 190, 170, 0.12), transparent 34%),
+        #080d16;
+}
+
+.card {
+    position: relative;
+    isolation: isolate;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.025)),
+                rgba(var(--card-bg-rgb), var(--card-bg-alpha));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    box-shadow:
+        0 12px 36px rgba(0, 0, 0, 0.24),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    -webkit-backdrop-filter: blur(22px) saturate(155%);
+    backdrop-filter: blur(22px) saturate(155%);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(125deg, rgba(255, 255, 255, 0.12), transparent 34%, transparent 72%, rgba(90, 170, 255, 0.055));
+    pointer-events: none;
+    z-index: 0;
+}
+
+.card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.card:hover {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035)),
+                rgba(var(--card-bg-rgb), 0.58);
+    border-color: rgba(190, 225, 255, 0.3);
+    box-shadow:
+        0 16px 42px rgba(0, 0, 0, 0.3),
+        0 0 24px rgba(75, 155, 235, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.tag,
+.btn,
+.skill-item,
+.view-all-skills {
+    background: rgba(255, 255, 255, 0.065);
+    border: 1px solid rgba(255, 255, 255, 0.105);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    backdrop-filter: blur(12px) saturate(140%);
+}
+
+.tag:hover,
+.btn:hover,
+.skill-item:hover,
+.view-all-skills:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.skill-item {
+    border-radius: 10px;
+}
+
+.progress-bar {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.avatar {
+    border-color: rgba(255, 255, 255, 0.28);
+    box-shadow: 0 0 20px rgba(90, 170, 255, 0.13);
+}
+
+footer {
+    color: rgba(220, 232, 245, 0.62);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .card {
+        background: rgba(15, 22, 35, 0.94);
+    }
+    .tag,
+    .btn,
+    .skill-item,
+    .view-all-skills {
+        background: rgba(30, 42, 60, 0.92);
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.025)),
+                    rgba(var(--card-bg-rgb), 0.62);
+    }
+}
