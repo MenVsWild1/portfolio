@@ -378,5 +378,10 @@ document.addEventListener("DOMContentLoaded", () => {
     window.setInterval(updateClockAndDate, 1000);
     renderProjects();
     initModal();
+    if (typeof VanillaTilt !== "undefined") {
+        VanillaTilt.init(document.querySelectorAll(".meta-card, .hero, .info-card"), {
+            max: 2.5, speed: 500, glare: true, "max-glare": 0.08
+        });
+    }
     initParticles();
 });
