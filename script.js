@@ -1,7 +1,7 @@
 const projects = {
     axis: {
         name: "AXIS VPN",
-        image: "/assets/axis-vpn.svg",
+        image: "/assets/axis-vpn.jpg",
         category: "Коммерческий Telegram-сервис",
         role: "Разработка продукта, backend и инфраструктуры",
         description: "Сервис для продажи и управления VPN-подписками. Я разрабатывал Telegram-бота и backend: связывал оплату, учёт подписок, выдачу доступов и серверную часть. За время работы через сервис прошло более 850 успешных платежей. Позже проект был передан новому владельцу.",
@@ -34,7 +34,7 @@ const projects = {
     },
     wraith: {
         name: "WraithControl",
-        image: "/assets/wraithcontrol.svg",
+        image: "/assets/wraithcontrol.jpg",
         category: "Telegram Business automation",
         role: "Backend-разработка и интеграции Telegram",
         description: "Собственный инструмент для управления Telegram Business и автоматизации диалогов. В проекте есть обработка событий сообщений, интерактивный интерфейс, настройки чатов и отдельные фоновые процессы.",
@@ -157,7 +157,7 @@ function openProject(id, trigger) {
     ).join("");
 
     const visual = project.image
-        ? '<div class="modal-visual"><img src="' + project.image + '" alt="Визуальная иллюстрация проекта ' + project.name + '" width="1200" height="680"></div>'
+        ? '<div class="modal-visual"><img src="' + project.image + '" alt="Аватар проекта ' + project.name + '" width="1200" height="680"></div>'
         : "";
     modalContent.innerHTML =
         visual +
