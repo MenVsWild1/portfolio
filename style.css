@@ -842,3 +842,26 @@ body::after {
         transform: none !important;
     }
 }
+
+
+/* Lightweight Three.js ambient scene */
+.container {
+    position: relative;
+    z-index: 1;
+}
+.three-scene {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: .58;
+}
+@media (max-width: 760px) {
+    .three-scene { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .three-scene { display: none; }
+}
