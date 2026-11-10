@@ -265,6 +265,7 @@ body::after {
 }
 .ambient {
     position: absolute;
+    translate: var(--pointer-x, 0px) var(--pointer-y, 0px);
     display: block;
     width: 34rem;
     height: 34rem;
@@ -389,6 +390,7 @@ body::after {
     grid-column: 2;
     grid-row: 1;
     position: relative;
+    height: 178px;
     min-height: 178px;
     overflow: hidden;
     border: 1px solid rgba(188,211,233,.16);
