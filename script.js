@@ -13,13 +13,14 @@ function updateTime() {
     const options = { day: 'numeric', month: 'long' };
     const formattedDate = now.toLocaleDateString('ru-RU', options);
     if (dateEl) {
-        const dateSpan = dateEl.childNodes[0];
-        if (dateSpan && dateSpan.nodeType === Node.TEXT_NODE) {
-             dateSpan.textContent = formattedDate + ' ';
-        } else if (dateSpan && dateSpan.tagName === 'SPAN') {
-             dateSpan.textContent = formattedDate;
-        }
+        dateEl.textContent = formattedDate;
     }
+
+    const year = String(now.getFullYear());
+    const currentYearEl = document.getElementById('current-year');
+    const copyrightYearEl = document.getElementById('copyright-year');
+    if (currentYearEl) currentYearEl.textContent = year;
+    if (copyrightYearEl) copyrightYearEl.textContent = year;
 }
 setInterval(updateTime, 1000);
 updateTime();
